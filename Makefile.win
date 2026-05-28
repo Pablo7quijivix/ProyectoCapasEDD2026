@@ -1,0 +1,46 @@
+# Project: ProyectoDeCapas
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = devcpp/main.o devcpp/src/MatrizDispersa.o devcpp/src/Capa.o devcpp/src/Imagen.o devcpp/src/Usuario.o devcpp/src/CargaMasiva.o devcpp/src/GeneradorImagenes.o
+LINKOBJ  = devcpp/main.o devcpp/src/MatrizDispersa.o devcpp/src/Capa.o devcpp/src/Imagen.o devcpp/src/Usuario.o devcpp/src/CargaMasiva.o devcpp/src/GeneradorImagenes.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Ingeniera en Sistemas URL 2025/3er semestre 2026/Estructura_de_Datos/GeneradorCapasProyecto/GeneradorCapas_DevCPP/devcpp/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Ingeniera en Sistemas URL 2025/3er semestre 2026/Estructura_de_Datos/GeneradorCapasProyecto/GeneradorCapas_DevCPP/devcpp/include"
+BIN      = ProyectoDeCapas.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+devcpp/main.o: devcpp/main.cpp
+	$(CPP) -c devcpp/main.cpp -o devcpp/main.o $(CXXFLAGS)
+
+devcpp/src/MatrizDispersa.o: devcpp/src/MatrizDispersa.cpp
+	$(CPP) -c devcpp/src/MatrizDispersa.cpp -o devcpp/src/MatrizDispersa.o $(CXXFLAGS)
+
+devcpp/src/Capa.o: devcpp/src/Capa.cpp
+	$(CPP) -c devcpp/src/Capa.cpp -o devcpp/src/Capa.o $(CXXFLAGS)
+
+devcpp/src/Imagen.o: devcpp/src/Imagen.cpp
+	$(CPP) -c devcpp/src/Imagen.cpp -o devcpp/src/Imagen.o $(CXXFLAGS)
+
+devcpp/src/Usuario.o: devcpp/src/Usuario.cpp
+	$(CPP) -c devcpp/src/Usuario.cpp -o devcpp/src/Usuario.o $(CXXFLAGS)
+
+devcpp/src/CargaMasiva.o: devcpp/src/CargaMasiva.cpp
+	$(CPP) -c devcpp/src/CargaMasiva.cpp -o devcpp/src/CargaMasiva.o $(CXXFLAGS)
+
+devcpp/src/GeneradorImagenes.o: devcpp/src/GeneradorImagenes.cpp
+	$(CPP) -c devcpp/src/GeneradorImagenes.cpp -o devcpp/src/GeneradorImagenes.o $(CXXFLAGS)
